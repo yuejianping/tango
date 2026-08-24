@@ -1,0 +1,90 @@
+:root {
+  --ink: #17211c;
+  --muted: #6d756f;
+  --paper: #f2f1ea;
+  --card: #fbfaf6;
+  --line: #dcded6;
+  --accent: #b8d658;
+  --accent-deep: #55700f;
+  --danger: #a9483f;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { box-sizing: border-box; }
+html { background: #d9ddd8; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: #d9ddd8; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif; }
+button, input { font: inherit; }
+button { color: inherit; -webkit-tap-highlight-color: transparent; }
+.app-shell { width: 100%; max-width: 460px; min-height: 100dvh; margin: 0 auto; background: var(--paper); overflow: hidden; position: relative; }
+
+.topbar { padding: calc(var(--safe-top) + 16px) 18px 12px; position: sticky; top: 0; z-index: 10; background: rgba(242, 241, 234, .94); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(23, 33, 28, .08); }
+.brand-row { display: flex; justify-content: space-between; align-items: center; min-height: 38px; }
+.brand { display: flex; gap: 10px; align-items: center; }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: var(--accent); background: var(--ink); font: 600 16px/1 Georgia, serif; }
+.brand h1 { margin: 0; font: 650 20px/1.1 Georgia, "Yu Mincho", serif; letter-spacing: -.02em; }
+.brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; letter-spacing: .13em; }
+.count-pill { border: 1px solid var(--line); border-radius: 99px; padding: 7px 10px; color: var(--muted); background: rgba(255,255,255,.45); font-size: 11px; }
+.search { height: 42px; margin-top: 13px; display: flex; align-items: center; gap: 9px; padding: 0 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--card); }
+.search span { color: var(--muted); font-size: 18px; transform: rotate(-18deg); }
+.search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 14px; }
+.search input::placeholder { color: #a0a59f; }
+
+.tabs { display: flex; gap: 4px; padding: 12px 18px 6px; }
+.tab { border: 0; border-radius: 99px; padding: 8px 13px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 650; cursor: pointer; }
+.tab.active { color: var(--ink); background: var(--accent); }
+.word-list { list-style: none; margin: 0; padding: 5px 14px calc(28px + var(--safe-bottom)); }
+.word-row { position: relative; border-bottom: 1px solid var(--line); }
+.word-row:first-child { border-top: 1px solid var(--line); }
+.word-link { width: 100%; min-height: 82px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; border: 0; padding: 14px 7px; text-align: left; background: transparent; cursor: pointer; }
+.word-primary { min-width: 0; }
+.word-title-line { display: flex; align-items: baseline; gap: 9px; }
+.word-title { margin: 0; font: 650 23px/1.15 Georgia, "Yu Mincho", "Noto Serif JP", serif; letter-spacing: .01em; }
+.word-reading { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.word-summary { margin: 7px 0 0; color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row-side { display: flex; align-items: center; gap: 9px; }
+.favorite-dot { color: #91a72b; font-size: 17px; }
+.level { min-width: 34px; padding: 5px 6px; border-radius: 7px; background: #e4e5df; color: #616962; text-align: center; font-size: 9px; font-weight: 750; }
+.chevron { color: #9ca29d; font-size: 17px; }
+.empty { padding: 78px 28px; text-align: center; }
+.empty b { display: block; font: 600 23px Georgia, serif; }
+.empty p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+.detail { min-height: 100dvh; padding-bottom: calc(82px + var(--safe-bottom)); background: var(--paper); }
+.detail-nav { min-height: 58px; padding: calc(var(--safe-top) + 9px) 13px 8px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; background: rgba(242,241,234,.94); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(23,33,28,.08); }
+.icon-button { min-width: 42px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 11px; background: transparent; font-size: 21px; cursor: pointer; }
+.icon-button:active { background: #e4e5de; }
+.detail-nav-label { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+.hero-word { padding: 38px 24px 27px; }
+.meta-line { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 10px; letter-spacing: .05em; }
+.meta-tag { padding: 4px 7px; border-radius: 6px; background: var(--accent); color: var(--ink); font-weight: 800; }
+.hero-word h1 { margin: 18px 0 7px; font: 650 clamp(43px, 14vw, 61px)/1.06 Georgia, "Yu Mincho", "Noto Serif JP", serif; letter-spacing: -.04em; }
+.reading-line { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+.speak { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; background: var(--card); cursor: pointer; }
+.core { margin: 0 18px; padding: 18px; border-radius: 16px; color: white; background: var(--ink); }
+.core small { color: var(--accent); font-size: 9px; letter-spacing: .15em; }
+.core p { margin: 9px 0 0; font: 550 18px/1.55 Georgia, "Noto Serif SC", serif; }
+.senses { padding: 11px 18px 0; }
+.sense { padding: 23px 2px 21px; border-bottom: 1px solid var(--line); }
+.sense-head { display: flex; gap: 10px; align-items: baseline; }
+.sense-num { color: var(--accent-deep); font: italic 12px Georgia, serif; }
+.sense h2 { margin: 0; font: 650 18px/1.35 Georgia, "Noto Serif SC", serif; }
+.sense-note { margin: 10px 0 16px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.example { margin: 9px 0 0; padding: 13px 14px; border-left: 2px solid var(--accent); background: var(--card); }
+.example-ja { margin: 0; font: 550 15px/1.6 Georgia, "Yu Mincho", "Noto Serif JP", serif; }
+.example-zh { margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.detail-actions { position: fixed; z-index: 12; bottom: 0; left: 50%; transform: translateX(-50%); width: min(460px,100%); display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 7px; padding: 9px 13px calc(9px + var(--safe-bottom)); background: rgba(242,241,234,.96); backdrop-filter: blur(18px); border-top: 1px solid var(--line); }
+.action { height: 48px; border: 1px solid var(--line); border-radius: 13px; background: var(--card); font-size: 12px; font-weight: 700; cursor: pointer; }
+.action.favorite { color: var(--ink); background: var(--accent); border-color: var(--accent); }
+.action:disabled { opacity: .32; }
+.more-actions { padding: 4px 18px 25px; }
+.remove { width: 100%; border: 0; padding: 14px; color: var(--danger); background: transparent; font-size: 12px; cursor: pointer; }
+
+.toast { position: fixed; z-index: 30; left: 50%; bottom: calc(18px + var(--safe-bottom)); transform: translate(-50%, 30px); width: min(390px, calc(100% - 32px)); display: flex; align-items: center; justify-content: space-between; padding: 13px 15px; border-radius: 13px; color: white; background: #26332c; box-shadow: 0 18px 40px rgba(0,0,0,.2); font-size: 12px; opacity: 0; pointer-events: none; transition: .22s ease; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.toast button { border: 0; padding: 3px 5px; color: var(--accent); background: transparent; font-weight: 800; cursor: pointer; }
+.loading { min-height: 100dvh; display: grid; place-content: center; text-align: center; }
+.loading span { font: 600 34px Georgia, serif; }.loading p { color: var(--muted); font-size: 12px; }
+
+@media (min-width: 461px) { .app-shell { box-shadow: 0 0 70px rgba(23,33,28,.16); } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }

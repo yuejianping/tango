@@ -1,0 +1,9 @@
+{
+  "name": "言葉帖 · 日语单词本",
+  "short_name": "言葉帖",
+  "start_url": "./#list",
+  "display": "standalone",
+  "background_color": "#f2f1ea",
+  "theme_color": "#17211c",
+  "lang": "zh-CN"
+}
